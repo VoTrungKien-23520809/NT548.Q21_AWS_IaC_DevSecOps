@@ -44,7 +44,6 @@ pipeline {
             steps {
                 echo "🔍 Running Trivy security scan..."
                 sh """
-                    which trivy || (curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin)
                     trivy image --exit-code 0 --severity HIGH,CRITICAL --no-progress ${BACKEND_IMAGE}:latest
                     echo "✅ Trivy scan completed"
                 """
