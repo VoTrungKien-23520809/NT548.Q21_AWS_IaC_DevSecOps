@@ -551,3 +551,23 @@ Nếu có vấn đề trong quá trình triển khai:
 
 ⭐ NT548 - Công nghệ DevOps và Ứng dụng ⭐
 
+
+---
+
+## BÀI TẬP THỰC HÀNH 02
+
+### Câu 1: Terraform + GitHub Actions + Checkov
+- Workflow: `.github/workflows/terraform-ci.yml`
+- 4 stages: Checkov Scan → Validate → Plan → Apply
+- Checkov tích hợp với `soft_fail: true`
+
+### Câu 2: CloudFormation + Deploy Pipeline
+- Template: `cloudformation/infrastructure.yaml`
+- Lint: `cfn-lint cloudformation/infrastructure.yaml`
+- Deploy: `bash cloudformation/deploy.sh`
+
+### Câu 3: Jenkins + Docker + Kubernetes
+- Microservices: `microservices/backend` (Flask), `microservices/frontend` (Nginx)
+- Jenkinsfile: `microservices/Jenkinsfile`
+- 7 stages: Checkout → Build → Test → Trivy → Load → Deploy → Verify
+- Kubernetes: minikube local cluster
